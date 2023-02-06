@@ -15,19 +15,20 @@ export default function Project() {
 
     useEffect(() => {
         axios.get('https://jsonplaceholder.typicode.com/users').then((res) => setState(res.data))
+
     }, [])
 
-    function delet(id){
+    function delet(id) {
         const newData = state.filter((value) => value.id !== id)
         setState(newData)
-
-
- 
     }
-       function getSearch(e){
-            const aa = state.filter((value) => value.name.toLowerCase().includes(e.toLowerCase()))
-            setState(aa)
-        }
+
+
+    function getSearch(e) {
+        const newSearch = state.filter((value) => value.name.toLowerCase().includes(e.toLowerCase()))
+        setState(newSearch)
+            
+    }
 
     return (
         <div className="Project">
