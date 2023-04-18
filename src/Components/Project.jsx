@@ -15,7 +15,6 @@ export default function Project() {
 
     useEffect(() => {
         axios.get('https://jsonplaceholder.typicode.com/users').then((res) => setState(res.data))
-
     }, [])
 
     function delet(id) {
